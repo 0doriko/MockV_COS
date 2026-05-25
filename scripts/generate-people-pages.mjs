@@ -7,6 +7,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { buildGptKnowledgePayload, enrichEmployee } from "./gpt-knowledge-helpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -273,21 +274,31 @@ function generateDataFiles(people) {
     fs.rmSync(dataDir, { recursive: true, force: true });
   }
   fs.mkdirSync(dataDir, { recursive: true });
+  const profilesBySlug = {};
   for (const person of people) {
     const slug = nameToSlug(person.name);
     const payload = {
       slug,
-      employee: person,
-      reporting_line: buildReportingLine(person, people),
-      peers: buildPeers(person, people),
+      employee: enrichEmployee(person),
+      reporting_line: buildReportingLine(person, people).map(enrichEmployee),
+      peers: buildPeers(person, people).map(enrichEmployee),
       profile_url: `${siteBaseUrl}/people/${slug}/`,
     };
+    profilesBySlug[slug] = payload;
     fs.writeFileSync(
       path.join(dataDir, `${slug}.json`),
       JSON.stringify(payload, null, 2)
     );
     console.log(`  data/${slug}.json`);
   }
+  return profilesBySlug;
+}
+
+function generateGptKnowledgeFile(people, profilesBySlug) {
+  const gptPath = path.join(root, "profiles_gpt_v1.json");
+  const payload = buildGptKnowledgePayload(people, profilesBySlug, siteBaseUrl);
+  fs.writeFileSync(gptPath, JSON.stringify(payload, null, 2));
+  console.log("  profiles_gpt_v1.json");
 }
 
 const data = JSON.parse(fs.readFileSync(profilesPath, "utf8"));
@@ -319,5 +330,6 @@ for (const person of people) {
 
 fs.writeFileSync(path.join(peopleDir, "index.html"), peopleIndexHtml(people));
 console.log("  people/index.html");
-generateDataFiles(people);
-console.log(`Generated ${people.length} profile pages and API data files.`);
+const profilesBySlug = generateDataFiles(people);
+generateGptKnowledgeFile(people, profilesBySlug);
+console.log(`Generated ${people.length} profile pages, API data, and GPT knowledge file.`);

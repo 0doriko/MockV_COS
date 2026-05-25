@@ -1,0 +1,1946 @@
+{
+  "dataset": "profiles_gpt_v1",
+  "version": "1.2.0",
+  "description": "Mock CompanyOS employee data for Custom GPT Knowledge. Each person has a unique tailored_message_format and location for local time.",
+  "site_reference": "https://0doriko.github.io/MockV_COS",
+  "generated_at": "2026-05-25T09:13:45.279Z",
+  "gpt_required_rules": {
+    "data_file": "profiles_gpt_v1.json",
+    "output_sections_in_order": [
+      "Name & Role",
+      "Location & local time",
+      "Why contact",
+      "Tailored message"
+    ],
+    "location_and_time": "For each person, show: **Location & local time:** {location_detail} — {compute current time from timezone_iana} ({timezone}). Example: 'Chicago, Illinois, United States — Sunday 7:01 PM (CST)'.",
+    "tailored_message_rule": "CRITICAL: Each Tailored message MUST follow that person's tailored_message_format in profiles_by_slug[slug].gpt_output. Marcus = heavy emoji. Maya = bullets only. Linh = Issue / Details / Ask sections. Never use one shared paragraph style for everyone.",
+    "use_real_names_only": true,
+    "forbidden_output_phrases": [
+      "Local time unavailable",
+      "Local time unknown"
+    ],
+    "forbidden_generic_names": [
+      "PM Owner",
+      "Support Manager",
+      "Engineering Lead",
+      "Admin Console Product Manager"
+    ]
+  },
+  "scenario_hints": {
+    "admin_console_loading_or_auth_api_issue": {
+      "use_these_real_names": [
+        "Marcus Reed",
+        "Maya Chen",
+        "Linh Tran",
+        "Priya Sharma",
+        "Mateo Alvarez"
+      ]
+    }
+  },
+  "company_structure": [
+    {
+      "name": "Aisha Rahman",
+      "role": "Technical Support Engineer",
+      "department": "Customer Experience - Technical Support",
+      "reports_to": "Maya Chen",
+      "timezone": "EST",
+      "location_detail": "New York, New York, United States",
+      "good_contact_time": "10:00 AM EST",
+      "communication_style": "Direct, technical, and ticket-data driven. Prefers clear repro steps and concise asks.",
+      "tailored_message_format": "FORMAT: Numbered repro steps only. Use: 1) Observed behavior 2) Repro steps 3) Ticket IDs 4) Ask. No greetings. Max 6 lines.",
+      "key_goal": "Reduce escalations caused by unclear product behavior.",
+      "timezone_iana": "America/New_York"
+    },
+    {
+      "name": "Carlos Nguyen",
+      "role": "Customer Success Manager",
+      "department": "Customer Success",
+      "reports_to": "Ben Carter",
+      "timezone": "PST",
+      "location_detail": "San Francisco, California, United States",
+      "good_contact_time": "2:00 PM PST",
+      "communication_style": "Warm, relationship-focused, and customer-impact oriented.",
+      "tailored_message_format": "FORMAT: Warm opening sentence, then 'Customer impact:' paragraph, then 'Ask:' one friendly question. Use 'we' and 'our accounts'. No bullets.",
+      "key_goal": "Protect enterprise account health and reduce churn risk.",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Backend Engineer",
+      "department": "Engineering - Platform Reliability",
+      "reports_to": "Marcus Reed",
+      "timezone": "IST",
+      "location_detail": "Bengaluru, Karnataka, India",
+      "good_contact_time": "11:30 AM IST",
+      "communication_style": "Highly technical, precise, and evidence-based. Prefers logs, timestamps, and clear severity.",
+      "tailored_message_format": "FORMAT: Structured blocks with labels on separate lines: Severity: | Started (UTC): | Service: | Error signature: | Logs: | Request:. No emoji. No prose paragraphs.",
+      "key_goal": "Improve reliability of admin and authentication services.",
+      "timezone_iana": "Asia/Kolkata"
+    },
+    {
+      "name": "Mateo Alvarez",
+      "role": "Incident Response Coordinator",
+      "department": "Engineering Operations",
+      "reports_to": "Marcus Reed",
+      "timezone": "CST",
+      "location_detail": "Chicago, Illinois, United States",
+      "good_contact_time": "9:00 AM CST",
+      "communication_style": "Fast-moving, operational, and escalation-focused.",
+      "tailored_message_format": "FORMAT: Incident timeline. Lines start with T+0:, T+15:, T+30:, then 'Need from you:' one line. Terse. No bullet symbols.",
+      "key_goal": "Coordinate cross-functional response during customer-impacting incidents.",
+      "timezone_iana": "America/Chicago"
+    },
+    {
+      "name": "Yuki Tayawa",
+      "role": "Localization Program Manager",
+      "department": "Globalization",
+      "reports_to": "Sophie Laurent",
+      "timezone": "JST",
+      "location_detail": "Tokyo, Japan",
+      "good_contact_time": "10:00 AM JST",
+      "communication_style": "Structured, thoughtful, and detail-oriented.",
+      "tailored_message_format": "FORMAT: Three markdown-style headers exactly: ## Context ## Regions affected ## Request. Polite, formal tone. Complete sentences under each header.",
+      "key_goal": "Ensure product and support messaging works across APAC markets.",
+      "timezone_iana": "Asia/Tokyo"
+    },
+    {
+      "name": "Jordan Kim",
+      "role": "Product Operations Manager",
+      "department": "Product Operations",
+      "reports_to": "Sophie Laurent",
+      "timezone": "PST",
+      "location_detail": "Seattle, Washington, United States",
+      "good_contact_time": "3:00 PM PST",
+      "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+      "tailored_message_format": "FORMAT: Exactly one sentence summary, then a line of hashtags only, e.g. #admin-console #auth #launch-risk. No other text.",
+      "key_goal": "Improve launch readiness and cross-functional product communication.",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Davis Wan",
+      "role": "Support Team Lead",
+      "department": "Customer Experience - Support Operations",
+      "reports_to": "Maya Chen",
+      "timezone": "KST",
+      "location_detail": "Seoul, South Korea",
+      "good_contact_time": "11:00 AM KST",
+      "communication_style": "Calm, diplomatic, and escalation-aware.",
+      "tailored_message_format": "FORMAT: Start with 'Hi [Name] — hope you're well.' Then 'When you have a moment,' soft ask. Use 'would you mind' and 'no rush'. No bullets, no bold.",
+      "key_goal": "Improve handoffs between frontline support and specialist teams.",
+      "timezone_iana": "Asia/Seoul"
+    },
+    {
+      "name": "Maya Chen",
+      "role": "Manager, Support Operations",
+      "department": "Customer Experience",
+      "reports_to": "Nadia Petrova",
+      "timezone": "PST",
+      "location_detail": "San Francisco, California, United States",
+      "good_contact_time": "1:00 PM PST",
+      "communication_style": "Practical, structured, and focused on team impact.",
+      "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
+      "key_goal": "Improve support quality, routing, and operational consistency.",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Sophie Laurent",
+      "role": "Senior Product Manager",
+      "department": "Product - Collaboration Platform",
+      "reports_to": "Daniel Okafor",
+      "timezone": "CET",
+      "location_detail": "Paris, France",
+      "good_contact_time": "10:30 AM CET",
+      "communication_style": "Strategic, concise, and impact-focused.",
+      "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
+      "key_goal": "Prioritize roadmap decisions using customer and support signals.",
+      "timezone_iana": "Europe/Paris"
+    },
+    {
+      "name": "Marcus Reed",
+      "role": "Engineering Manager",
+      "department": "Engineering - Platform Reliability",
+      "reports_to": "Daniel Okafor",
+      "timezone": "CST",
+      "location_detail": "Chicago, Illinois, United States",
+      "good_contact_time": "1:00 PM CST",
+      "communication_style": "Direct, technical, and incident-oriented.",
+      "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
+      "key_goal": "Reduce production issues affecting enterprise customers.",
+      "timezone_iana": "America/Chicago"
+    },
+    {
+      "name": "Ben Carter",
+      "role": "Director, Customer Success",
+      "department": "Customer Success",
+      "reports_to": "Amara Johnson",
+      "timezone": "EST",
+      "location_detail": "Boston, Massachusetts, United States",
+      "good_contact_time": "8:30 AM EST",
+      "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+      "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+      "key_goal": "Reduce churn risk and improve strategic account retention.",
+      "timezone_iana": "America/New_York"
+    },
+    {
+      "name": "Linh Tran",
+      "role": "Data Analyst",
+      "department": "Business Intelligence",
+      "reports_to": "Maya Chen",
+      "timezone": "PST",
+      "location_detail": "San Francisco, California, United States",
+      "good_contact_time": "2:00 PM PST",
+      "communication_style": "Analytical, dashboard-driven, and methodical.",
+      "tailored_message_format": "FORMAT: Three sections in order: 'Issue:' one line summary, then 'Details:' 2-4 lines with metrics/dimensions/segments, then 'Ask:' specific data pull request. No emoji. No bullets.",
+      "key_goal": "Identify ticket trends, incident patterns, and automation opportunities.",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Rohan Iyer",
+      "role": "Solutions Architect",
+      "department": "Enterprise Solutions",
+      "reports_to": "Ben Carter",
+      "timezone": "IST",
+      "location_detail": "Mumbai, Maharashtra, India",
+      "good_contact_time": "4:00 PM IST",
+      "communication_style": "Technical, consultative, and customer-context rich.",
+      "tailored_message_format": "FORMAT: Pseudo-table text: Account tier | Environment | Workload | Symptom | then 'Recommendation request:' one line. Use pipe characters.",
+      "key_goal": "Translate enterprise customer needs into scalable technical solutions.",
+      "timezone_iana": "Asia/Kolkata"
+    },
+    {
+      "name": "Nadia Petrova",
+      "role": "Head of Customer Experience Programs",
+      "department": "Customer Experience",
+      "reports_to": "Amara Johnson",
+      "timezone": "EET",
+      "location_detail": "Bucharest, Romania",
+      "good_contact_time": "11:00 AM EET",
+      "communication_style": "Programmatic, research-informed, and cross-functional.",
+      "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+      "key_goal": "Improve customer support experience through process and tooling changes.",
+      "timezone_iana": "Europe/Bucharest"
+    },
+    {
+      "name": "Daniel Okafor",
+      "role": "VP, Product & Engineering",
+      "department": "Product and Engineering",
+      "reports_to": "Amara Johnson",
+      "timezone": "GMT",
+      "location_detail": "London, United Kingdom",
+      "good_contact_time": "9:00 AM GMT",
+      "communication_style": "Concise, strategic, and business-impact focused.",
+      "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+      "key_goal": "Align product roadmap and engineering execution with customer impact.",
+      "timezone_iana": "Europe/London"
+    },
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "location_detail": "New York, New York, United States",
+      "good_contact_time": "7:30 AM EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience.",
+      "timezone_iana": "America/New_York"
+    }
+  ],
+  "profiles_by_slug": {
+    "aisha-rahman": {
+      "slug": "aisha-rahman",
+      "employee": {
+        "name": "Aisha Rahman",
+        "role": "Technical Support Engineer",
+        "department": "Customer Experience - Technical Support",
+        "reports_to": "Maya Chen",
+        "timezone": "EST",
+        "location_detail": "New York, New York, United States",
+        "good_contact_time": "10:00 AM EST",
+        "communication_style": "Direct, technical, and ticket-data driven. Prefers clear repro steps and concise asks.",
+        "tailored_message_format": "FORMAT: Numbered repro steps only. Use: 1) Observed behavior 2) Repro steps 3) Ticket IDs 4) Ask. No greetings. Max 6 lines.",
+        "key_goal": "Reduce escalations caused by unclear product behavior.",
+        "timezone_iana": "America/New_York"
+      },
+      "reporting_line": [
+        {
+          "name": "Aisha Rahman",
+          "role": "Technical Support Engineer",
+          "department": "Customer Experience - Technical Support",
+          "reports_to": "Maya Chen",
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "10:00 AM EST",
+          "communication_style": "Direct, technical, and ticket-data driven. Prefers clear repro steps and concise asks.",
+          "tailored_message_format": "FORMAT: Numbered repro steps only. Use: 1) Observed behavior 2) Repro steps 3) Ticket IDs 4) Ask. No greetings. Max 6 lines.",
+          "key_goal": "Reduce escalations caused by unclear product behavior.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Maya Chen",
+          "role": "Manager, Support Operations",
+          "department": "Customer Experience",
+          "reports_to": "Nadia Petrova",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "1:00 PM PST",
+          "communication_style": "Practical, structured, and focused on team impact.",
+          "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
+          "key_goal": "Improve support quality, routing, and operational consistency.",
+          "timezone_iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "department": "Customer Experience",
+          "reports_to": "Amara Johnson",
+          "timezone": "EET",
+          "location_detail": "Bucharest, Romania",
+          "good_contact_time": "11:00 AM EET",
+          "communication_style": "Programmatic, research-informed, and cross-functional.",
+          "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+          "key_goal": "Improve customer support experience through process and tooling changes.",
+          "timezone_iana": "Europe/Bucharest"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Davis Wan",
+          "role": "Support Team Lead",
+          "department": "Customer Experience - Support Operations",
+          "reports_to": "Maya Chen",
+          "timezone": "KST",
+          "location_detail": "Seoul, South Korea",
+          "good_contact_time": "11:00 AM KST",
+          "communication_style": "Calm, diplomatic, and escalation-aware.",
+          "tailored_message_format": "FORMAT: Start with 'Hi [Name] — hope you're well.' Then 'When you have a moment,' soft ask. Use 'would you mind' and 'no rush'. No bullets, no bold.",
+          "key_goal": "Improve handoffs between frontline support and specialist teams.",
+          "timezone_iana": "Asia/Seoul"
+        },
+        {
+          "name": "Linh Tran",
+          "role": "Data Analyst",
+          "department": "Business Intelligence",
+          "reports_to": "Maya Chen",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "2:00 PM PST",
+          "communication_style": "Analytical, dashboard-driven, and methodical.",
+          "tailored_message_format": "FORMAT: Three sections in order: 'Issue:' one line summary, then 'Details:' 2-4 lines with metrics/dimensions/segments, then 'Ask:' specific data pull request. No emoji. No bullets.",
+          "key_goal": "Identify ticket trends, incident patterns, and automation opportunities.",
+          "timezone_iana": "America/Los_Angeles"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/aisha-rahman/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Aisha Rahman",
+          "role": "Technical Support Engineer",
+          "location_detail": "New York, New York, United States",
+          "time_zone": "EST",
+          "timezone_iana": "America/New_York",
+          "good_time_to_contact": "10:00 AM EST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Numbered repro steps only. Use: 1) Observed behavior 2) Repro steps 3) Ticket IDs 4) Ask. No greetings. Max 6 lines.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "carlos-nguyen": {
+      "slug": "carlos-nguyen",
+      "employee": {
+        "name": "Carlos Nguyen",
+        "role": "Customer Success Manager",
+        "department": "Customer Success",
+        "reports_to": "Ben Carter",
+        "timezone": "PST",
+        "location_detail": "San Francisco, California, United States",
+        "good_contact_time": "2:00 PM PST",
+        "communication_style": "Warm, relationship-focused, and customer-impact oriented.",
+        "tailored_message_format": "FORMAT: Warm opening sentence, then 'Customer impact:' paragraph, then 'Ask:' one friendly question. Use 'we' and 'our accounts'. No bullets.",
+        "key_goal": "Protect enterprise account health and reduce churn risk.",
+        "timezone_iana": "America/Los_Angeles"
+      },
+      "reporting_line": [
+        {
+          "name": "Carlos Nguyen",
+          "role": "Customer Success Manager",
+          "department": "Customer Success",
+          "reports_to": "Ben Carter",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "2:00 PM PST",
+          "communication_style": "Warm, relationship-focused, and customer-impact oriented.",
+          "tailored_message_format": "FORMAT: Warm opening sentence, then 'Customer impact:' paragraph, then 'Ask:' one friendly question. Use 'we' and 'our accounts'. No bullets.",
+          "key_goal": "Protect enterprise account health and reduce churn risk.",
+          "timezone_iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Ben Carter",
+          "role": "Director, Customer Success",
+          "department": "Customer Success",
+          "reports_to": "Amara Johnson",
+          "timezone": "EST",
+          "location_detail": "Boston, Massachusetts, United States",
+          "good_contact_time": "8:30 AM EST",
+          "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+          "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+          "key_goal": "Reduce churn risk and improve strategic account retention.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Rohan Iyer",
+          "role": "Solutions Architect",
+          "department": "Enterprise Solutions",
+          "reports_to": "Ben Carter",
+          "timezone": "IST",
+          "location_detail": "Mumbai, Maharashtra, India",
+          "good_contact_time": "4:00 PM IST",
+          "communication_style": "Technical, consultative, and customer-context rich.",
+          "tailored_message_format": "FORMAT: Pseudo-table text: Account tier | Environment | Workload | Symptom | then 'Recommendation request:' one line. Use pipe characters.",
+          "key_goal": "Translate enterprise customer needs into scalable technical solutions.",
+          "timezone_iana": "Asia/Kolkata"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/carlos-nguyen/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Carlos Nguyen",
+          "role": "Customer Success Manager",
+          "location_detail": "San Francisco, California, United States",
+          "time_zone": "PST",
+          "timezone_iana": "America/Los_Angeles",
+          "good_time_to_contact": "2:00 PM PST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Warm opening sentence, then 'Customer impact:' paragraph, then 'Ask:' one friendly question. Use 'we' and 'our accounts'. No bullets.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "priya-sharma": {
+      "slug": "priya-sharma",
+      "employee": {
+        "name": "Priya Sharma",
+        "role": "Backend Engineer",
+        "department": "Engineering - Platform Reliability",
+        "reports_to": "Marcus Reed",
+        "timezone": "IST",
+        "location_detail": "Bengaluru, Karnataka, India",
+        "good_contact_time": "11:30 AM IST",
+        "communication_style": "Highly technical, precise, and evidence-based. Prefers logs, timestamps, and clear severity.",
+        "tailored_message_format": "FORMAT: Structured blocks with labels on separate lines: Severity: | Started (UTC): | Service: | Error signature: | Logs: | Request:. No emoji. No prose paragraphs.",
+        "key_goal": "Improve reliability of admin and authentication services.",
+        "timezone_iana": "Asia/Kolkata"
+      },
+      "reporting_line": [
+        {
+          "name": "Priya Sharma",
+          "role": "Backend Engineer",
+          "department": "Engineering - Platform Reliability",
+          "reports_to": "Marcus Reed",
+          "timezone": "IST",
+          "location_detail": "Bengaluru, Karnataka, India",
+          "good_contact_time": "11:30 AM IST",
+          "communication_style": "Highly technical, precise, and evidence-based. Prefers logs, timestamps, and clear severity.",
+          "tailored_message_format": "FORMAT: Structured blocks with labels on separate lines: Severity: | Started (UTC): | Service: | Error signature: | Logs: | Request:. No emoji. No prose paragraphs.",
+          "key_goal": "Improve reliability of admin and authentication services.",
+          "timezone_iana": "Asia/Kolkata"
+        },
+        {
+          "name": "Marcus Reed",
+          "role": "Engineering Manager",
+          "department": "Engineering - Platform Reliability",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CST",
+          "location_detail": "Chicago, Illinois, United States",
+          "good_contact_time": "1:00 PM CST",
+          "communication_style": "Direct, technical, and incident-oriented.",
+          "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
+          "key_goal": "Reduce production issues affecting enterprise customers.",
+          "timezone_iana": "America/Chicago"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Mateo Alvarez",
+          "role": "Incident Response Coordinator",
+          "department": "Engineering Operations",
+          "reports_to": "Marcus Reed",
+          "timezone": "CST",
+          "location_detail": "Chicago, Illinois, United States",
+          "good_contact_time": "9:00 AM CST",
+          "communication_style": "Fast-moving, operational, and escalation-focused.",
+          "tailored_message_format": "FORMAT: Incident timeline. Lines start with T+0:, T+15:, T+30:, then 'Need from you:' one line. Terse. No bullet symbols.",
+          "key_goal": "Coordinate cross-functional response during customer-impacting incidents.",
+          "timezone_iana": "America/Chicago"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/priya-sharma/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Priya Sharma",
+          "role": "Backend Engineer",
+          "location_detail": "Bengaluru, Karnataka, India",
+          "time_zone": "IST",
+          "timezone_iana": "Asia/Kolkata",
+          "good_time_to_contact": "11:30 AM IST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Structured blocks with labels on separate lines: Severity: | Started (UTC): | Service: | Error signature: | Logs: | Request:. No emoji. No prose paragraphs.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "mateo-alvarez": {
+      "slug": "mateo-alvarez",
+      "employee": {
+        "name": "Mateo Alvarez",
+        "role": "Incident Response Coordinator",
+        "department": "Engineering Operations",
+        "reports_to": "Marcus Reed",
+        "timezone": "CST",
+        "location_detail": "Chicago, Illinois, United States",
+        "good_contact_time": "9:00 AM CST",
+        "communication_style": "Fast-moving, operational, and escalation-focused.",
+        "tailored_message_format": "FORMAT: Incident timeline. Lines start with T+0:, T+15:, T+30:, then 'Need from you:' one line. Terse. No bullet symbols.",
+        "key_goal": "Coordinate cross-functional response during customer-impacting incidents.",
+        "timezone_iana": "America/Chicago"
+      },
+      "reporting_line": [
+        {
+          "name": "Mateo Alvarez",
+          "role": "Incident Response Coordinator",
+          "department": "Engineering Operations",
+          "reports_to": "Marcus Reed",
+          "timezone": "CST",
+          "location_detail": "Chicago, Illinois, United States",
+          "good_contact_time": "9:00 AM CST",
+          "communication_style": "Fast-moving, operational, and escalation-focused.",
+          "tailored_message_format": "FORMAT: Incident timeline. Lines start with T+0:, T+15:, T+30:, then 'Need from you:' one line. Terse. No bullet symbols.",
+          "key_goal": "Coordinate cross-functional response during customer-impacting incidents.",
+          "timezone_iana": "America/Chicago"
+        },
+        {
+          "name": "Marcus Reed",
+          "role": "Engineering Manager",
+          "department": "Engineering - Platform Reliability",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CST",
+          "location_detail": "Chicago, Illinois, United States",
+          "good_contact_time": "1:00 PM CST",
+          "communication_style": "Direct, technical, and incident-oriented.",
+          "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
+          "key_goal": "Reduce production issues affecting enterprise customers.",
+          "timezone_iana": "America/Chicago"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Priya Sharma",
+          "role": "Backend Engineer",
+          "department": "Engineering - Platform Reliability",
+          "reports_to": "Marcus Reed",
+          "timezone": "IST",
+          "location_detail": "Bengaluru, Karnataka, India",
+          "good_contact_time": "11:30 AM IST",
+          "communication_style": "Highly technical, precise, and evidence-based. Prefers logs, timestamps, and clear severity.",
+          "tailored_message_format": "FORMAT: Structured blocks with labels on separate lines: Severity: | Started (UTC): | Service: | Error signature: | Logs: | Request:. No emoji. No prose paragraphs.",
+          "key_goal": "Improve reliability of admin and authentication services.",
+          "timezone_iana": "Asia/Kolkata"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/mateo-alvarez/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Mateo Alvarez",
+          "role": "Incident Response Coordinator",
+          "location_detail": "Chicago, Illinois, United States",
+          "time_zone": "CST",
+          "timezone_iana": "America/Chicago",
+          "good_time_to_contact": "9:00 AM CST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Incident timeline. Lines start with T+0:, T+15:, T+30:, then 'Need from you:' one line. Terse. No bullet symbols.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "yuki-tayawa": {
+      "slug": "yuki-tayawa",
+      "employee": {
+        "name": "Yuki Tayawa",
+        "role": "Localization Program Manager",
+        "department": "Globalization",
+        "reports_to": "Sophie Laurent",
+        "timezone": "JST",
+        "location_detail": "Tokyo, Japan",
+        "good_contact_time": "10:00 AM JST",
+        "communication_style": "Structured, thoughtful, and detail-oriented.",
+        "tailored_message_format": "FORMAT: Three markdown-style headers exactly: ## Context ## Regions affected ## Request. Polite, formal tone. Complete sentences under each header.",
+        "key_goal": "Ensure product and support messaging works across APAC markets.",
+        "timezone_iana": "Asia/Tokyo"
+      },
+      "reporting_line": [
+        {
+          "name": "Yuki Tayawa",
+          "role": "Localization Program Manager",
+          "department": "Globalization",
+          "reports_to": "Sophie Laurent",
+          "timezone": "JST",
+          "location_detail": "Tokyo, Japan",
+          "good_contact_time": "10:00 AM JST",
+          "communication_style": "Structured, thoughtful, and detail-oriented.",
+          "tailored_message_format": "FORMAT: Three markdown-style headers exactly: ## Context ## Regions affected ## Request. Polite, formal tone. Complete sentences under each header.",
+          "key_goal": "Ensure product and support messaging works across APAC markets.",
+          "timezone_iana": "Asia/Tokyo"
+        },
+        {
+          "name": "Sophie Laurent",
+          "role": "Senior Product Manager",
+          "department": "Product - Collaboration Platform",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CET",
+          "location_detail": "Paris, France",
+          "good_contact_time": "10:30 AM CET",
+          "communication_style": "Strategic, concise, and impact-focused.",
+          "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
+          "key_goal": "Prioritize roadmap decisions using customer and support signals.",
+          "timezone_iana": "Europe/Paris"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Jordan Kim",
+          "role": "Product Operations Manager",
+          "department": "Product Operations",
+          "reports_to": "Sophie Laurent",
+          "timezone": "PST",
+          "location_detail": "Seattle, Washington, United States",
+          "good_contact_time": "3:00 PM PST",
+          "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+          "tailored_message_format": "FORMAT: Exactly one sentence summary, then a line of hashtags only, e.g. #admin-console #auth #launch-risk. No other text.",
+          "key_goal": "Improve launch readiness and cross-functional product communication.",
+          "timezone_iana": "America/Los_Angeles"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/yuki-tayawa/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Yuki Tayawa",
+          "role": "Localization Program Manager",
+          "location_detail": "Tokyo, Japan",
+          "time_zone": "JST",
+          "timezone_iana": "Asia/Tokyo",
+          "good_time_to_contact": "10:00 AM JST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Three markdown-style headers exactly: ## Context ## Regions affected ## Request. Polite, formal tone. Complete sentences under each header.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "jordan-kim": {
+      "slug": "jordan-kim",
+      "employee": {
+        "name": "Jordan Kim",
+        "role": "Product Operations Manager",
+        "department": "Product Operations",
+        "reports_to": "Sophie Laurent",
+        "timezone": "PST",
+        "location_detail": "Seattle, Washington, United States",
+        "good_contact_time": "3:00 PM PST",
+        "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+        "tailored_message_format": "FORMAT: Exactly one sentence summary, then a line of hashtags only, e.g. #admin-console #auth #launch-risk. No other text.",
+        "key_goal": "Improve launch readiness and cross-functional product communication.",
+        "timezone_iana": "America/Los_Angeles"
+      },
+      "reporting_line": [
+        {
+          "name": "Jordan Kim",
+          "role": "Product Operations Manager",
+          "department": "Product Operations",
+          "reports_to": "Sophie Laurent",
+          "timezone": "PST",
+          "location_detail": "Seattle, Washington, United States",
+          "good_contact_time": "3:00 PM PST",
+          "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+          "tailored_message_format": "FORMAT: Exactly one sentence summary, then a line of hashtags only, e.g. #admin-console #auth #launch-risk. No other text.",
+          "key_goal": "Improve launch readiness and cross-functional product communication.",
+          "timezone_iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Sophie Laurent",
+          "role": "Senior Product Manager",
+          "department": "Product - Collaboration Platform",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CET",
+          "location_detail": "Paris, France",
+          "good_contact_time": "10:30 AM CET",
+          "communication_style": "Strategic, concise, and impact-focused.",
+          "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
+          "key_goal": "Prioritize roadmap decisions using customer and support signals.",
+          "timezone_iana": "Europe/Paris"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Yuki Tayawa",
+          "role": "Localization Program Manager",
+          "department": "Globalization",
+          "reports_to": "Sophie Laurent",
+          "timezone": "JST",
+          "location_detail": "Tokyo, Japan",
+          "good_contact_time": "10:00 AM JST",
+          "communication_style": "Structured, thoughtful, and detail-oriented.",
+          "tailored_message_format": "FORMAT: Three markdown-style headers exactly: ## Context ## Regions affected ## Request. Polite, formal tone. Complete sentences under each header.",
+          "key_goal": "Ensure product and support messaging works across APAC markets.",
+          "timezone_iana": "Asia/Tokyo"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/jordan-kim/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Jordan Kim",
+          "role": "Product Operations Manager",
+          "location_detail": "Seattle, Washington, United States",
+          "time_zone": "PST",
+          "timezone_iana": "America/Los_Angeles",
+          "good_time_to_contact": "3:00 PM PST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Exactly one sentence summary, then a line of hashtags only, e.g. #admin-console #auth #launch-risk. No other text.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "davis-wan": {
+      "slug": "davis-wan",
+      "employee": {
+        "name": "Davis Wan",
+        "role": "Support Team Lead",
+        "department": "Customer Experience - Support Operations",
+        "reports_to": "Maya Chen",
+        "timezone": "KST",
+        "location_detail": "Seoul, South Korea",
+        "good_contact_time": "11:00 AM KST",
+        "communication_style": "Calm, diplomatic, and escalation-aware.",
+        "tailored_message_format": "FORMAT: Start with 'Hi [Name] — hope you're well.' Then 'When you have a moment,' soft ask. Use 'would you mind' and 'no rush'. No bullets, no bold.",
+        "key_goal": "Improve handoffs between frontline support and specialist teams.",
+        "timezone_iana": "Asia/Seoul"
+      },
+      "reporting_line": [
+        {
+          "name": "Davis Wan",
+          "role": "Support Team Lead",
+          "department": "Customer Experience - Support Operations",
+          "reports_to": "Maya Chen",
+          "timezone": "KST",
+          "location_detail": "Seoul, South Korea",
+          "good_contact_time": "11:00 AM KST",
+          "communication_style": "Calm, diplomatic, and escalation-aware.",
+          "tailored_message_format": "FORMAT: Start with 'Hi [Name] — hope you're well.' Then 'When you have a moment,' soft ask. Use 'would you mind' and 'no rush'. No bullets, no bold.",
+          "key_goal": "Improve handoffs between frontline support and specialist teams.",
+          "timezone_iana": "Asia/Seoul"
+        },
+        {
+          "name": "Maya Chen",
+          "role": "Manager, Support Operations",
+          "department": "Customer Experience",
+          "reports_to": "Nadia Petrova",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "1:00 PM PST",
+          "communication_style": "Practical, structured, and focused on team impact.",
+          "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
+          "key_goal": "Improve support quality, routing, and operational consistency.",
+          "timezone_iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "department": "Customer Experience",
+          "reports_to": "Amara Johnson",
+          "timezone": "EET",
+          "location_detail": "Bucharest, Romania",
+          "good_contact_time": "11:00 AM EET",
+          "communication_style": "Programmatic, research-informed, and cross-functional.",
+          "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+          "key_goal": "Improve customer support experience through process and tooling changes.",
+          "timezone_iana": "Europe/Bucharest"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Aisha Rahman",
+          "role": "Technical Support Engineer",
+          "department": "Customer Experience - Technical Support",
+          "reports_to": "Maya Chen",
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "10:00 AM EST",
+          "communication_style": "Direct, technical, and ticket-data driven. Prefers clear repro steps and concise asks.",
+          "tailored_message_format": "FORMAT: Numbered repro steps only. Use: 1) Observed behavior 2) Repro steps 3) Ticket IDs 4) Ask. No greetings. Max 6 lines.",
+          "key_goal": "Reduce escalations caused by unclear product behavior.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Linh Tran",
+          "role": "Data Analyst",
+          "department": "Business Intelligence",
+          "reports_to": "Maya Chen",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "2:00 PM PST",
+          "communication_style": "Analytical, dashboard-driven, and methodical.",
+          "tailored_message_format": "FORMAT: Three sections in order: 'Issue:' one line summary, then 'Details:' 2-4 lines with metrics/dimensions/segments, then 'Ask:' specific data pull request. No emoji. No bullets.",
+          "key_goal": "Identify ticket trends, incident patterns, and automation opportunities.",
+          "timezone_iana": "America/Los_Angeles"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/davis-wan/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Davis Wan",
+          "role": "Support Team Lead",
+          "location_detail": "Seoul, South Korea",
+          "time_zone": "KST",
+          "timezone_iana": "Asia/Seoul",
+          "good_time_to_contact": "11:00 AM KST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Start with 'Hi [Name] — hope you're well.' Then 'When you have a moment,' soft ask. Use 'would you mind' and 'no rush'. No bullets, no bold.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "maya-chen": {
+      "slug": "maya-chen",
+      "employee": {
+        "name": "Maya Chen",
+        "role": "Manager, Support Operations",
+        "department": "Customer Experience",
+        "reports_to": "Nadia Petrova",
+        "timezone": "PST",
+        "location_detail": "San Francisco, California, United States",
+        "good_contact_time": "1:00 PM PST",
+        "communication_style": "Practical, structured, and focused on team impact.",
+        "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
+        "key_goal": "Improve support quality, routing, and operational consistency.",
+        "timezone_iana": "America/Los_Angeles"
+      },
+      "reporting_line": [
+        {
+          "name": "Maya Chen",
+          "role": "Manager, Support Operations",
+          "department": "Customer Experience",
+          "reports_to": "Nadia Petrova",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "1:00 PM PST",
+          "communication_style": "Practical, structured, and focused on team impact.",
+          "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
+          "key_goal": "Improve support quality, routing, and operational consistency.",
+          "timezone_iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "department": "Customer Experience",
+          "reports_to": "Amara Johnson",
+          "timezone": "EET",
+          "location_detail": "Bucharest, Romania",
+          "good_contact_time": "11:00 AM EET",
+          "communication_style": "Programmatic, research-informed, and cross-functional.",
+          "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+          "key_goal": "Improve customer support experience through process and tooling changes.",
+          "timezone_iana": "Europe/Bucharest"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/maya-chen/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Maya Chen",
+          "role": "Manager, Support Operations",
+          "location_detail": "San Francisco, California, United States",
+          "time_zone": "PST",
+          "timezone_iana": "America/Los_Angeles",
+          "good_time_to_contact": "1:00 PM PST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
+        "tailored_message_shape_example": "• Situation: Regional admin console loading failures (APJ + EMEA)\n• Volume: 12+ cases in the last 48 hours\n• Teams affected: Support, Engineering, Incident Response\n• Ask: Align Support guidance and tagging so cases route consistently while we escalate",
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "sophie-laurent": {
+      "slug": "sophie-laurent",
+      "employee": {
+        "name": "Sophie Laurent",
+        "role": "Senior Product Manager",
+        "department": "Product - Collaboration Platform",
+        "reports_to": "Daniel Okafor",
+        "timezone": "CET",
+        "location_detail": "Paris, France",
+        "good_contact_time": "10:30 AM CET",
+        "communication_style": "Strategic, concise, and impact-focused.",
+        "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
+        "key_goal": "Prioritize roadmap decisions using customer and support signals.",
+        "timezone_iana": "Europe/Paris"
+      },
+      "reporting_line": [
+        {
+          "name": "Sophie Laurent",
+          "role": "Senior Product Manager",
+          "department": "Product - Collaboration Platform",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CET",
+          "location_detail": "Paris, France",
+          "good_contact_time": "10:30 AM CET",
+          "communication_style": "Strategic, concise, and impact-focused.",
+          "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
+          "key_goal": "Prioritize roadmap decisions using customer and support signals.",
+          "timezone_iana": "Europe/Paris"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Marcus Reed",
+          "role": "Engineering Manager",
+          "department": "Engineering - Platform Reliability",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CST",
+          "location_detail": "Chicago, Illinois, United States",
+          "good_contact_time": "1:00 PM CST",
+          "communication_style": "Direct, technical, and incident-oriented.",
+          "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
+          "key_goal": "Reduce production issues affecting enterprise customers.",
+          "timezone_iana": "America/Chicago"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/sophie-laurent/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Sophie Laurent",
+          "role": "Senior Product Manager",
+          "location_detail": "Paris, France",
+          "time_zone": "CET",
+          "timezone_iana": "Europe/Paris",
+          "good_time_to_contact": "10:30 AM CET"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "marcus-reed": {
+      "slug": "marcus-reed",
+      "employee": {
+        "name": "Marcus Reed",
+        "role": "Engineering Manager",
+        "department": "Engineering - Platform Reliability",
+        "reports_to": "Daniel Okafor",
+        "timezone": "CST",
+        "location_detail": "Chicago, Illinois, United States",
+        "good_contact_time": "1:00 PM CST",
+        "communication_style": "Direct, technical, and incident-oriented.",
+        "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
+        "key_goal": "Reduce production issues affecting enterprise customers.",
+        "timezone_iana": "America/Chicago"
+      },
+      "reporting_line": [
+        {
+          "name": "Marcus Reed",
+          "role": "Engineering Manager",
+          "department": "Engineering - Platform Reliability",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CST",
+          "location_detail": "Chicago, Illinois, United States",
+          "good_contact_time": "1:00 PM CST",
+          "communication_style": "Direct, technical, and incident-oriented.",
+          "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
+          "key_goal": "Reduce production issues affecting enterprise customers.",
+          "timezone_iana": "America/Chicago"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Sophie Laurent",
+          "role": "Senior Product Manager",
+          "department": "Product - Collaboration Platform",
+          "reports_to": "Daniel Okafor",
+          "timezone": "CET",
+          "location_detail": "Paris, France",
+          "good_contact_time": "10:30 AM CET",
+          "communication_style": "Strategic, concise, and impact-focused.",
+          "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
+          "key_goal": "Prioritize roadmap decisions using customer and support signals.",
+          "timezone_iana": "Europe/Paris"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/marcus-reed/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Marcus Reed",
+          "role": "Engineering Manager",
+          "location_detail": "Chicago, Illinois, United States",
+          "time_zone": "CST",
+          "timezone_iana": "America/Chicago",
+          "good_time_to_contact": "1:00 PM CST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
+        "tailored_message_shape_example": "🔥 Hey Marcus — ⚡️ admin console load failures spiking in APJ + EMEA!! 🛠️ 12+ cases / 48 hrs 📉 smells like auth/API 😬 Can your team claim ownership + bump priority on investigation? ✅🚀",
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "ben-carter": {
+      "slug": "ben-carter",
+      "employee": {
+        "name": "Ben Carter",
+        "role": "Director, Customer Success",
+        "department": "Customer Success",
+        "reports_to": "Amara Johnson",
+        "timezone": "EST",
+        "location_detail": "Boston, Massachusetts, United States",
+        "good_contact_time": "8:30 AM EST",
+        "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+        "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+        "key_goal": "Reduce churn risk and improve strategic account retention.",
+        "timezone_iana": "America/New_York"
+      },
+      "reporting_line": [
+        {
+          "name": "Ben Carter",
+          "role": "Director, Customer Success",
+          "department": "Customer Success",
+          "reports_to": "Amara Johnson",
+          "timezone": "EST",
+          "location_detail": "Boston, Massachusetts, United States",
+          "good_contact_time": "8:30 AM EST",
+          "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+          "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+          "key_goal": "Reduce churn risk and improve strategic account retention.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "department": "Customer Experience",
+          "reports_to": "Amara Johnson",
+          "timezone": "EET",
+          "location_detail": "Bucharest, Romania",
+          "good_contact_time": "11:00 AM EET",
+          "communication_style": "Programmatic, research-informed, and cross-functional.",
+          "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+          "key_goal": "Improve customer support experience through process and tooling changes.",
+          "timezone_iana": "Europe/Bucharest"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/ben-carter/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Ben Carter",
+          "role": "Director, Customer Success",
+          "location_detail": "Boston, Massachusetts, United States",
+          "time_zone": "EST",
+          "timezone_iana": "America/New_York",
+          "good_time_to_contact": "8:30 AM EST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "linh-tran": {
+      "slug": "linh-tran",
+      "employee": {
+        "name": "Linh Tran",
+        "role": "Data Analyst",
+        "department": "Business Intelligence",
+        "reports_to": "Maya Chen",
+        "timezone": "PST",
+        "location_detail": "San Francisco, California, United States",
+        "good_contact_time": "2:00 PM PST",
+        "communication_style": "Analytical, dashboard-driven, and methodical.",
+        "tailored_message_format": "FORMAT: Three sections in order: 'Issue:' one line summary, then 'Details:' 2-4 lines with metrics/dimensions/segments, then 'Ask:' specific data pull request. No emoji. No bullets.",
+        "key_goal": "Identify ticket trends, incident patterns, and automation opportunities.",
+        "timezone_iana": "America/Los_Angeles"
+      },
+      "reporting_line": [
+        {
+          "name": "Linh Tran",
+          "role": "Data Analyst",
+          "department": "Business Intelligence",
+          "reports_to": "Maya Chen",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "2:00 PM PST",
+          "communication_style": "Analytical, dashboard-driven, and methodical.",
+          "tailored_message_format": "FORMAT: Three sections in order: 'Issue:' one line summary, then 'Details:' 2-4 lines with metrics/dimensions/segments, then 'Ask:' specific data pull request. No emoji. No bullets.",
+          "key_goal": "Identify ticket trends, incident patterns, and automation opportunities.",
+          "timezone_iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Maya Chen",
+          "role": "Manager, Support Operations",
+          "department": "Customer Experience",
+          "reports_to": "Nadia Petrova",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "1:00 PM PST",
+          "communication_style": "Practical, structured, and focused on team impact.",
+          "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
+          "key_goal": "Improve support quality, routing, and operational consistency.",
+          "timezone_iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "department": "Customer Experience",
+          "reports_to": "Amara Johnson",
+          "timezone": "EET",
+          "location_detail": "Bucharest, Romania",
+          "good_contact_time": "11:00 AM EET",
+          "communication_style": "Programmatic, research-informed, and cross-functional.",
+          "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+          "key_goal": "Improve customer support experience through process and tooling changes.",
+          "timezone_iana": "Europe/Bucharest"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Aisha Rahman",
+          "role": "Technical Support Engineer",
+          "department": "Customer Experience - Technical Support",
+          "reports_to": "Maya Chen",
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "10:00 AM EST",
+          "communication_style": "Direct, technical, and ticket-data driven. Prefers clear repro steps and concise asks.",
+          "tailored_message_format": "FORMAT: Numbered repro steps only. Use: 1) Observed behavior 2) Repro steps 3) Ticket IDs 4) Ask. No greetings. Max 6 lines.",
+          "key_goal": "Reduce escalations caused by unclear product behavior.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Davis Wan",
+          "role": "Support Team Lead",
+          "department": "Customer Experience - Support Operations",
+          "reports_to": "Maya Chen",
+          "timezone": "KST",
+          "location_detail": "Seoul, South Korea",
+          "good_contact_time": "11:00 AM KST",
+          "communication_style": "Calm, diplomatic, and escalation-aware.",
+          "tailored_message_format": "FORMAT: Start with 'Hi [Name] — hope you're well.' Then 'When you have a moment,' soft ask. Use 'would you mind' and 'no rush'. No bullets, no bold.",
+          "key_goal": "Improve handoffs between frontline support and specialist teams.",
+          "timezone_iana": "Asia/Seoul"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/linh-tran/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Linh Tran",
+          "role": "Data Analyst",
+          "location_detail": "San Francisco, California, United States",
+          "time_zone": "PST",
+          "timezone_iana": "America/Los_Angeles",
+          "good_time_to_contact": "2:00 PM PST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Three sections in order: 'Issue:' one line summary, then 'Details:' 2-4 lines with metrics/dimensions/segments, then 'Ask:' specific data pull request. No emoji. No bullets.",
+        "tailored_message_shape_example": "Issue: Admin console loading failures elevated across APJ and EMEA\nDetails: 12+ tickets in 48 hours; suspected auth/API correlation; need breakdown by region, account tier, and error signature\nAsk: Pull ticket volume for admin console loading failures (48h), segmented by region, tier, and error pattern",
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "rohan-iyer": {
+      "slug": "rohan-iyer",
+      "employee": {
+        "name": "Rohan Iyer",
+        "role": "Solutions Architect",
+        "department": "Enterprise Solutions",
+        "reports_to": "Ben Carter",
+        "timezone": "IST",
+        "location_detail": "Mumbai, Maharashtra, India",
+        "good_contact_time": "4:00 PM IST",
+        "communication_style": "Technical, consultative, and customer-context rich.",
+        "tailored_message_format": "FORMAT: Pseudo-table text: Account tier | Environment | Workload | Symptom | then 'Recommendation request:' one line. Use pipe characters.",
+        "key_goal": "Translate enterprise customer needs into scalable technical solutions.",
+        "timezone_iana": "Asia/Kolkata"
+      },
+      "reporting_line": [
+        {
+          "name": "Rohan Iyer",
+          "role": "Solutions Architect",
+          "department": "Enterprise Solutions",
+          "reports_to": "Ben Carter",
+          "timezone": "IST",
+          "location_detail": "Mumbai, Maharashtra, India",
+          "good_contact_time": "4:00 PM IST",
+          "communication_style": "Technical, consultative, and customer-context rich.",
+          "tailored_message_format": "FORMAT: Pseudo-table text: Account tier | Environment | Workload | Symptom | then 'Recommendation request:' one line. Use pipe characters.",
+          "key_goal": "Translate enterprise customer needs into scalable technical solutions.",
+          "timezone_iana": "Asia/Kolkata"
+        },
+        {
+          "name": "Ben Carter",
+          "role": "Director, Customer Success",
+          "department": "Customer Success",
+          "reports_to": "Amara Johnson",
+          "timezone": "EST",
+          "location_detail": "Boston, Massachusetts, United States",
+          "good_contact_time": "8:30 AM EST",
+          "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+          "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+          "key_goal": "Reduce churn risk and improve strategic account retention.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Carlos Nguyen",
+          "role": "Customer Success Manager",
+          "department": "Customer Success",
+          "reports_to": "Ben Carter",
+          "timezone": "PST",
+          "location_detail": "San Francisco, California, United States",
+          "good_contact_time": "2:00 PM PST",
+          "communication_style": "Warm, relationship-focused, and customer-impact oriented.",
+          "tailored_message_format": "FORMAT: Warm opening sentence, then 'Customer impact:' paragraph, then 'Ask:' one friendly question. Use 'we' and 'our accounts'. No bullets.",
+          "key_goal": "Protect enterprise account health and reduce churn risk.",
+          "timezone_iana": "America/Los_Angeles"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/rohan-iyer/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Rohan Iyer",
+          "role": "Solutions Architect",
+          "location_detail": "Mumbai, Maharashtra, India",
+          "time_zone": "IST",
+          "timezone_iana": "Asia/Kolkata",
+          "good_time_to_contact": "4:00 PM IST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Pseudo-table text: Account tier | Environment | Workload | Symptom | then 'Recommendation request:' one line. Use pipe characters.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "nadia-petrova": {
+      "slug": "nadia-petrova",
+      "employee": {
+        "name": "Nadia Petrova",
+        "role": "Head of Customer Experience Programs",
+        "department": "Customer Experience",
+        "reports_to": "Amara Johnson",
+        "timezone": "EET",
+        "location_detail": "Bucharest, Romania",
+        "good_contact_time": "11:00 AM EET",
+        "communication_style": "Programmatic, research-informed, and cross-functional.",
+        "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+        "key_goal": "Improve customer support experience through process and tooling changes.",
+        "timezone_iana": "Europe/Bucharest"
+      },
+      "reporting_line": [
+        {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "department": "Customer Experience",
+          "reports_to": "Amara Johnson",
+          "timezone": "EET",
+          "location_detail": "Bucharest, Romania",
+          "good_contact_time": "11:00 AM EET",
+          "communication_style": "Programmatic, research-informed, and cross-functional.",
+          "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+          "key_goal": "Improve customer support experience through process and tooling changes.",
+          "timezone_iana": "Europe/Bucharest"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Ben Carter",
+          "role": "Director, Customer Success",
+          "department": "Customer Success",
+          "reports_to": "Amara Johnson",
+          "timezone": "EST",
+          "location_detail": "Boston, Massachusetts, United States",
+          "good_contact_time": "8:30 AM EST",
+          "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+          "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+          "key_goal": "Reduce churn risk and improve strategic account retention.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/nadia-petrova/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "location_detail": "Bucharest, Romania",
+          "time_zone": "EET",
+          "timezone_iana": "Europe/Bucharest",
+          "good_time_to_contact": "11:00 AM EET"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "daniel-okafor": {
+      "slug": "daniel-okafor",
+      "employee": {
+        "name": "Daniel Okafor",
+        "role": "VP, Product & Engineering",
+        "department": "Product and Engineering",
+        "reports_to": "Amara Johnson",
+        "timezone": "GMT",
+        "location_detail": "London, United Kingdom",
+        "good_contact_time": "9:00 AM GMT",
+        "communication_style": "Concise, strategic, and business-impact focused.",
+        "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+        "key_goal": "Align product roadmap and engineering execution with customer impact.",
+        "timezone_iana": "Europe/London"
+      },
+      "reporting_line": [
+        {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "department": "Product and Engineering",
+          "reports_to": "Amara Johnson",
+          "timezone": "GMT",
+          "location_detail": "London, United Kingdom",
+          "good_contact_time": "9:00 AM GMT",
+          "communication_style": "Concise, strategic, and business-impact focused.",
+          "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+          "key_goal": "Align product roadmap and engineering execution with customer impact.",
+          "timezone_iana": "Europe/London"
+        },
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [
+        {
+          "name": "Ben Carter",
+          "role": "Director, Customer Success",
+          "department": "Customer Success",
+          "reports_to": "Amara Johnson",
+          "timezone": "EST",
+          "location_detail": "Boston, Massachusetts, United States",
+          "good_contact_time": "8:30 AM EST",
+          "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+          "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
+          "key_goal": "Reduce churn risk and improve strategic account retention.",
+          "timezone_iana": "America/New_York"
+        },
+        {
+          "name": "Nadia Petrova",
+          "role": "Head of Customer Experience Programs",
+          "department": "Customer Experience",
+          "reports_to": "Amara Johnson",
+          "timezone": "EET",
+          "location_detail": "Bucharest, Romania",
+          "good_contact_time": "11:00 AM EET",
+          "communication_style": "Programmatic, research-informed, and cross-functional.",
+          "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
+          "key_goal": "Improve customer support experience through process and tooling changes.",
+          "timezone_iana": "Europe/Bucharest"
+        }
+      ],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/daniel-okafor/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Daniel Okafor",
+          "role": "VP, Product & Engineering",
+          "location_detail": "London, United Kingdom",
+          "time_zone": "GMT",
+          "timezone_iana": "Europe/London",
+          "good_time_to_contact": "9:00 AM GMT"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    },
+    "amara-johnson": {
+      "slug": "amara-johnson",
+      "employee": {
+        "name": "Amara Johnson",
+        "role": "Chief Customer Officer",
+        "department": "Executive Leadership",
+        "reports_to": null,
+        "timezone": "EST",
+        "location_detail": "New York, New York, United States",
+        "good_contact_time": "7:30 AM EST",
+        "communication_style": "Executive-level, outcome-focused, and concise.",
+        "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+        "key_goal": "Improve customer trust, retention, and enterprise experience.",
+        "timezone_iana": "America/New_York"
+      },
+      "reporting_line": [
+        {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "department": "Executive Leadership",
+          "reports_to": null,
+          "timezone": "EST",
+          "location_detail": "New York, New York, United States",
+          "good_contact_time": "7:30 AM EST",
+          "communication_style": "Executive-level, outcome-focused, and concise.",
+          "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+          "key_goal": "Improve customer trust, retention, and enterprise experience.",
+          "timezone_iana": "America/New_York"
+        }
+      ],
+      "peers": [],
+      "profile_url": "https://0doriko.github.io/MockV_COS/people/amara-johnson/",
+      "gpt_output": {
+        "copy_exactly": {
+          "name": "Amara Johnson",
+          "role": "Chief Customer Officer",
+          "location_detail": "New York, New York, United States",
+          "time_zone": "EST",
+          "timezone_iana": "America/New_York",
+          "good_time_to_contact": "7:30 AM EST"
+        },
+        "local_time_rule": "At response time, compute this person's current local time using timezone_iana and show it in output (e.g. 'Sunday 7:01 PM'). Never write 'Local time unavailable'.",
+        "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
+        "tailored_message_shape_example": null,
+        "tailored_message_must_not": "Do NOT use the same paragraph format as other stakeholders. Follow tailored_message_format exactly.",
+        "never_use": [
+          "Local time unavailable",
+          "Local time unknown",
+          "PM Owner",
+          "Support Manager",
+          "Engineering Lead",
+          "Admin Console Product Manager"
+        ]
+      }
+    }
+  },
+  "slug_index": [
+    {
+      "name": "Aisha Rahman",
+      "slug": "aisha-rahman",
+      "location_detail": "New York, New York, United States",
+      "timezone_iana": "America/New_York"
+    },
+    {
+      "name": "Carlos Nguyen",
+      "slug": "carlos-nguyen",
+      "location_detail": "San Francisco, California, United States",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Priya Sharma",
+      "slug": "priya-sharma",
+      "location_detail": "Bengaluru, Karnataka, India",
+      "timezone_iana": "Asia/Kolkata"
+    },
+    {
+      "name": "Mateo Alvarez",
+      "slug": "mateo-alvarez",
+      "location_detail": "Chicago, Illinois, United States",
+      "timezone_iana": "America/Chicago"
+    },
+    {
+      "name": "Yuki Tayawa",
+      "slug": "yuki-tayawa",
+      "location_detail": "Tokyo, Japan",
+      "timezone_iana": "Asia/Tokyo"
+    },
+    {
+      "name": "Jordan Kim",
+      "slug": "jordan-kim",
+      "location_detail": "Seattle, Washington, United States",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Davis Wan",
+      "slug": "davis-wan",
+      "location_detail": "Seoul, South Korea",
+      "timezone_iana": "Asia/Seoul"
+    },
+    {
+      "name": "Maya Chen",
+      "slug": "maya-chen",
+      "location_detail": "San Francisco, California, United States",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Sophie Laurent",
+      "slug": "sophie-laurent",
+      "location_detail": "Paris, France",
+      "timezone_iana": "Europe/Paris"
+    },
+    {
+      "name": "Marcus Reed",
+      "slug": "marcus-reed",
+      "location_detail": "Chicago, Illinois, United States",
+      "timezone_iana": "America/Chicago"
+    },
+    {
+      "name": "Ben Carter",
+      "slug": "ben-carter",
+      "location_detail": "Boston, Massachusetts, United States",
+      "timezone_iana": "America/New_York"
+    },
+    {
+      "name": "Linh Tran",
+      "slug": "linh-tran",
+      "location_detail": "San Francisco, California, United States",
+      "timezone_iana": "America/Los_Angeles"
+    },
+    {
+      "name": "Rohan Iyer",
+      "slug": "rohan-iyer",
+      "location_detail": "Mumbai, Maharashtra, India",
+      "timezone_iana": "Asia/Kolkata"
+    },
+    {
+      "name": "Nadia Petrova",
+      "slug": "nadia-petrova",
+      "location_detail": "Bucharest, Romania",
+      "timezone_iana": "Europe/Bucharest"
+    },
+    {
+      "name": "Daniel Okafor",
+      "slug": "daniel-okafor",
+      "location_detail": "London, United Kingdom",
+      "timezone_iana": "Europe/London"
+    },
+    {
+      "name": "Amara Johnson",
+      "slug": "amara-johnson",
+      "location_detail": "New York, New York, United States",
+      "timezone_iana": "America/New_York"
+    }
+  ]
+}

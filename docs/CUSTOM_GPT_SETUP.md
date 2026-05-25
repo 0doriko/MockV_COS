@@ -1,60 +1,36 @@
-# Custom GPT Action setup
+# Custom GPT setup (Dropbox workspace)
 
-Your GitHub Pages site is a **website** (HTML). Custom GPT **Actions** need an **OpenAPI schema** (API description), not a people directory page.
+Upload **`profiles_gpt_v1.json`** to Knowledge (not `profiles.json`).
 
-## Do not import this URL
-
-```
-https://0doriko.github.io/MockV_COS/people/
-```
-
-That returns HTML. You will see: **"Could not find a valid URL in `servers`"**.
-
-## Import this URL instead
-
-```
-https://0doriko.github.io/MockV_COS/openapi.json
-```
-
-Or paste the contents of `openapi.json` from the repo into the Schema box.
-
-## Steps in ChatGPT
-
-1. Open your Custom GPT → **Configure** → **Actions** → **Create new action**.
-2. Click **Import from URL**.
-3. Paste: `https://0doriko.github.io/MockV_COS/openapi.json`
-4. **Authentication:** None
-5. Confirm two operations appear:
-   - `getCompanyStructure` — all employees (`profiles.json`)
-   - `getEmployeeProfile` — one person by slug (`data/maya-chen.json`, etc.)
-6. Save the GPT.
-
-## Example GPT instructions (add to Instructions)
-
-```
-When you need org context, call getCompanyStructure or getEmployeeProfile.
-
-Slug examples: aisha-rahman, maya-chen, yuki-tayawa, davis-wan.
-
-Use communication_style and key_goal when drafting messages to each person.
-```
-
-## Slug reference
-
-| Name | Slug |
-|------|------|
-| Aisha Rahman | aisha-rahman |
-| Maya Chen | maya-chen |
-| Yuki Tayawa | yuki-tayawa |
-| Davis Wan | davis-wan |
-
-Full list: open [People directory](https://0doriko.github.io/MockV_COS/people/) — the URL path after `/people/` is the slug.
-
-## After updating profiles.json
+Regenerate after edits:
 
 ```bash
 npm run build:pages
-git add profiles.json people/ data/ openapi.json
-git commit -m "Update profiles and API data for Custom GPT"
-git push
 ```
+
+## Instructions to paste (important)
+
+```
+You are SyncMind. Use ONLY profiles_gpt_v1.json.
+
+FOR EVERY STAKEHOLDER OUTPUT THESE FOUR SECTIONS IN ORDER:
+1. **Name & Role**
+2. **Location & local time** — use location_detail + compute current local time from timezone_iana (never "unavailable")
+3. **Why contact**
+4. **Tailored message** — MUST follow that person's gpt_output.tailored_message_format exactly
+
+TAILORED MESSAGE RULES (non-negotiable):
+- Marcus Reed: heavy emoji, casual, NO bullets
+- Maya Chen: bullet points ONLY (• or -), NO opening/closing paragraph
+- Linh Tran: exactly three labeled blocks: Issue: / Details: / Ask:
+- Everyone else: their own format in gpt_output — never reuse one paragraph style for all
+
+Use profiles_by_slug[slug].gpt_output.tailored_message_shape_example as the shape reference when drafting.
+Use real names from the file only — never "PM Owner" or generic titles.
+```
+
+## Re-upload after changes
+
+1. Delete old `profiles_gpt_v1.json` from GPT Knowledge
+2. Upload the new file from your repo
+3. Save GPT

@@ -6,7 +6,10 @@
       "department": "Customer Experience - Technical Support",
       "reports_to": "Maya Chen",
       "timezone": "EST",
+      "location_detail": "New York, New York, United States",
+      "good_contact_time": "10:00 AM EST",
       "communication_style": "Direct, technical, and ticket-data driven. Prefers clear repro steps and concise asks.",
+      "tailored_message_format": "FORMAT: Numbered repro steps only. Use: 1) Observed behavior 2) Repro steps 3) Ticket IDs 4) Ask. No greetings. Max 6 lines.",
       "key_goal": "Reduce escalations caused by unclear product behavior."
     },
     {
@@ -15,7 +18,10 @@
       "department": "Customer Success",
       "reports_to": "Ben Carter",
       "timezone": "PST",
+      "location_detail": "San Francisco, California, United States",
+      "good_contact_time": "2:00 PM PST",
       "communication_style": "Warm, relationship-focused, and customer-impact oriented.",
+      "tailored_message_format": "FORMAT: Warm opening sentence, then 'Customer impact:' paragraph, then 'Ask:' one friendly question. Use 'we' and 'our accounts'. No bullets.",
       "key_goal": "Protect enterprise account health and reduce churn risk."
     },
     {
@@ -24,7 +30,10 @@
       "department": "Engineering - Platform Reliability",
       "reports_to": "Marcus Reed",
       "timezone": "IST",
+      "location_detail": "Bengaluru, Karnataka, India",
+      "good_contact_time": "11:30 AM IST",
       "communication_style": "Highly technical, precise, and evidence-based. Prefers logs, timestamps, and clear severity.",
+      "tailored_message_format": "FORMAT: Structured blocks with labels on separate lines: Severity: | Started (UTC): | Service: | Error signature: | Logs: | Request:. No emoji. No prose paragraphs.",
       "key_goal": "Improve reliability of admin and authentication services."
     },
     {
@@ -33,7 +42,10 @@
       "department": "Engineering Operations",
       "reports_to": "Marcus Reed",
       "timezone": "CST",
+      "location_detail": "Chicago, Illinois, United States",
+      "good_contact_time": "9:00 AM CST",
       "communication_style": "Fast-moving, operational, and escalation-focused.",
+      "tailored_message_format": "FORMAT: Incident timeline. Lines start with T+0:, T+15:, T+30:, then 'Need from you:' one line. Terse. No bullet symbols.",
       "key_goal": "Coordinate cross-functional response during customer-impacting incidents."
     },
     {
@@ -42,7 +54,10 @@
       "department": "Globalization",
       "reports_to": "Sophie Laurent",
       "timezone": "JST",
+      "location_detail": "Tokyo, Japan",
+      "good_contact_time": "10:00 AM JST",
       "communication_style": "Structured, thoughtful, and detail-oriented.",
+      "tailored_message_format": "FORMAT: Three markdown-style headers exactly: ## Context ## Regions affected ## Request. Polite, formal tone. Complete sentences under each header.",
       "key_goal": "Ensure product and support messaging works across APAC markets."
     },
     {
@@ -51,7 +66,10 @@
       "department": "Product Operations",
       "reports_to": "Sophie Laurent",
       "timezone": "PST",
+      "location_detail": "Seattle, Washington, United States",
+      "good_contact_time": "3:00 PM PST",
       "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+      "tailored_message_format": "FORMAT: Exactly one sentence summary, then a line of hashtags only, e.g. #admin-console #auth #launch-risk. No other text.",
       "key_goal": "Improve launch readiness and cross-functional product communication."
     },
     {
@@ -60,7 +78,10 @@
       "department": "Customer Experience - Support Operations",
       "reports_to": "Maya Chen",
       "timezone": "KST",
+      "location_detail": "Seoul, South Korea",
+      "good_contact_time": "11:00 AM KST",
       "communication_style": "Calm, diplomatic, and escalation-aware.",
+      "tailored_message_format": "FORMAT: Start with 'Hi [Name] — hope you're well.' Then 'When you have a moment,' soft ask. Use 'would you mind' and 'no rush'. No bullets, no bold.",
       "key_goal": "Improve handoffs between frontline support and specialist teams."
     },
     {
@@ -69,7 +90,10 @@
       "department": "Customer Experience",
       "reports_to": "Nadia Petrova",
       "timezone": "PST",
+      "location_detail": "San Francisco, California, United States",
+      "good_contact_time": "1:00 PM PST",
       "communication_style": "Practical, structured, and focused on team impact.",
+      "tailored_message_format": "FORMAT: Bullet points ONLY (use • or -). Minimum 4 bullets: situation, volume, teams affected, ask. No opening paragraph. No closing paragraph.",
       "key_goal": "Improve support quality, routing, and operational consistency."
     },
     {
@@ -78,7 +102,10 @@
       "department": "Product - Collaboration Platform",
       "reports_to": "Daniel Okafor",
       "timezone": "CET",
+      "location_detail": "Paris, France",
+      "good_contact_time": "10:30 AM CET",
       "communication_style": "Strategic, concise, and impact-focused.",
+      "tailored_message_format": "FORMAT: Exactly three labeled lines: Problem: | Signal: | Ask:. One short sentence per line. No emoji.",
       "key_goal": "Prioritize roadmap decisions using customer and support signals."
     },
     {
@@ -87,7 +114,10 @@
       "department": "Engineering - Platform Reliability",
       "reports_to": "Daniel Okafor",
       "timezone": "CST",
+      "location_detail": "Chicago, Illinois, United States",
+      "good_contact_time": "1:00 PM CST",
       "communication_style": "Direct, technical, and incident-oriented.",
+      "tailored_message_format": "FORMAT: Heavy emoji throughout (🔥⚡️🛠️📉✅ at least 5 emoji). Short casual lines. Sound urgent but upbeat. No formal headers or bullet lists.",
       "key_goal": "Reduce production issues affecting enterprise customers."
     },
     {
@@ -96,7 +126,10 @@
       "department": "Customer Success",
       "reports_to": "Amara Johnson",
       "timezone": "EST",
+      "location_detail": "Boston, Massachusetts, United States",
+      "good_contact_time": "8:30 AM EST",
       "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+      "tailored_message_format": "FORMAT: Max 3 short bullets. Each bullet starts with business outcome (retention, ARR risk, NPS). No technical jargon. Under 50 words total.",
       "key_goal": "Reduce churn risk and improve strategic account retention."
     },
     {
@@ -105,7 +138,10 @@
       "department": "Business Intelligence",
       "reports_to": "Maya Chen",
       "timezone": "PST",
+      "location_detail": "San Francisco, California, United States",
+      "good_contact_time": "2:00 PM PST",
       "communication_style": "Analytical, dashboard-driven, and methodical.",
+      "tailored_message_format": "FORMAT: Three sections in order: 'Issue:' one line summary, then 'Details:' 2-4 lines with metrics/dimensions/segments, then 'Ask:' specific data pull request. No emoji. No bullets.",
       "key_goal": "Identify ticket trends, incident patterns, and automation opportunities."
     },
     {
@@ -114,7 +150,10 @@
       "department": "Enterprise Solutions",
       "reports_to": "Ben Carter",
       "timezone": "IST",
+      "location_detail": "Mumbai, Maharashtra, India",
+      "good_contact_time": "4:00 PM IST",
       "communication_style": "Technical, consultative, and customer-context rich.",
+      "tailored_message_format": "FORMAT: Pseudo-table text: Account tier | Environment | Workload | Symptom | then 'Recommendation request:' one line. Use pipe characters.",
       "key_goal": "Translate enterprise customer needs into scalable technical solutions."
     },
     {
@@ -123,7 +162,10 @@
       "department": "Customer Experience",
       "reports_to": "Amara Johnson",
       "timezone": "EET",
+      "location_detail": "Bucharest, Romania",
+      "good_contact_time": "11:00 AM EET",
       "communication_style": "Programmatic, research-informed, and cross-functional.",
+      "tailored_message_format": "FORMAT: Program update style — 'Objective:' | 'Workstream:' | 'Owner:' | 'Decision needed:' each on its own line. Cross-functional tone.",
       "key_goal": "Improve customer support experience through process and tooling changes."
     },
     {
@@ -132,7 +174,10 @@
       "department": "Product and Engineering",
       "reports_to": "Amara Johnson",
       "timezone": "GMT",
+      "location_detail": "London, United Kingdom",
+      "good_contact_time": "9:00 AM GMT",
       "communication_style": "Concise, strategic, and business-impact focused.",
+      "tailored_message_format": "FORMAT: BLUF — first line is the decision/ask in under 15 words. Second line only if needed for business impact. No bullets, no emoji.",
       "key_goal": "Align product roadmap and engineering execution with customer impact."
     },
     {
@@ -141,7 +186,10 @@
       "department": "Executive Leadership",
       "reports_to": null,
       "timezone": "EST",
+      "location_detail": "New York, New York, United States",
+      "good_contact_time": "7:30 AM EST",
       "communication_style": "Executive-level, outcome-focused, and concise.",
+      "tailored_message_format": "FORMAT: Exactly 2 sentences. Include one metric (case count, % change, or revenue-at-risk). No questions — state recommended executive action.",
       "key_goal": "Improve customer trust, retention, and enterprise experience."
     }
   ]
