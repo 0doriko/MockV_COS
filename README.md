@@ -1,6 +1,6 @@
 # Fake CompanyOS
 
-A static **companyOS** people profile simulator for [GitHub Pages](https://pages.github.com/), powered by `Profiles.json`.
+A static **companyOS** people profile simulator for [GitHub Pages](https://pages.github.com/), powered by `profiles.json`.
 
 ## GitHub Pages deploy
 
@@ -14,16 +14,19 @@ A static **companyOS** people profile simulator for [GitHub Pages](https://pages
 
 `.nojekyll` is included so GitHub does not run Jekyll (which would ignore some paths).
 
-### After editing Profiles.json
+### After editing profiles.json
 
-Regenerate per-person pages, then commit:
+**You must regenerate** the `people/` folder — those HTML files embed old names and URL slugs.
 
 ```bash
 npm run build:pages
 # or: node scripts/generate-people-pages.mjs
-git add people/
-git commit -m "Regenerate people pages"
+git add profiles.json people/
+git commit -m "Update names and regenerate people pages"
+git push
 ```
+
+If you rename someone, their URL slug changes too (e.g. `yuki-tanaka/` → `yuki-tayawa/`). Update any `reports_to` fields that still use the old name, or reporting lines will break.
 
 ## URL structure
 
@@ -51,7 +54,7 @@ python3 -m http.server 8080
 
 | UI section | Source |
 |------------|--------|
-| Name, role, department | `Profiles.json` |
+| Name, role, department | `profiles.json` |
 | Reporting line | `reports_to` chain + direct-report counts |
 | Peers | Same manager in org chart |
 | Current time / location | `timezone` |
@@ -66,7 +69,7 @@ python3 -m http.server 8080
 
 | Path | Purpose |
 |------|---------|
-| `Profiles.json` | Employee data |
+| `profiles.json` | Employee data (edit this) |
 | `people/<slug>/index.html` | Static profile pages (generated) |
 | `people/index.html` | People directory (generated) |
 | `scripts/generate-people-pages.mjs` | Page generator |

@@ -149,8 +149,8 @@ function badgesFor(person) {
 
 export async function loadProfiles() {
   if (profilesCache) return profilesCache;
-  const res = await fetch(resolveAsset("Profiles.json"));
-  if (!res.ok) throw new Error("Failed to load Profiles.json");
+  const res = await fetch(resolveAsset("profiles.json"));
+  if (!res.ok) throw new Error("Failed to load profiles.json");
   const data = await res.json();
   profilesCache = data.company_structure || [];
   byName = new Map(profilesCache.map((p) => [p.name, p]));
@@ -273,7 +273,7 @@ export function buildProfileView(personName) {
     },
     workstreams: [],
     meta: {
-      source: "Profiles.json",
+      source: "profiles.json",
       generatedAt: new Date().toISOString(),
     },
   };

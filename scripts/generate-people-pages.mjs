@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generates static per-person pages for GitHub Pages.
- * Run after changing Profiles.json: node scripts/generate-people-pages.mjs
+ * Run after changing profiles.json: node scripts/generate-people-pages.mjs
  */
 
 import fs from "fs";
@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
-const profilesPath = path.join(root, "Profiles.json");
+const profilesPath = path.join(root, "profiles.json");
 const peopleDir = path.join(root, "people");
 
 function nameToSlug(name) {
