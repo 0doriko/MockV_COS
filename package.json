@@ -1,0 +1,7 @@
+{
+  "name": "fake-companyos",
+  "private": true,
+  "scripts": {
+    "build:pages": "node scripts/generate-people-pages.mjs"
+  }
+}

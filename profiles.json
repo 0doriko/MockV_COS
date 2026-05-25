@@ -1,0 +1,148 @@
+{
+  "company_structure": [
+    {
+      "name": "Aisha Rahman",
+      "role": "Technical Support Engineer",
+      "department": "Customer Experience - Technical Support",
+      "reports_to": "Maya Chen",
+      "timezone": "EST",
+      "communication_style": "Direct, technical, and ticket-data driven. Prefers clear repro steps and concise asks.",
+      "key_goal": "Reduce escalations caused by unclear product behavior."
+    },
+    {
+      "name": "Carlos Nguyen",
+      "role": "Customer Success Manager",
+      "department": "Customer Success",
+      "reports_to": "Ben Carter",
+      "timezone": "PST",
+      "communication_style": "Warm, relationship-focused, and customer-impact oriented.",
+      "key_goal": "Protect enterprise account health and reduce churn risk."
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Backend Engineer",
+      "department": "Engineering - Platform Reliability",
+      "reports_to": "Marcus Reed",
+      "timezone": "IST",
+      "communication_style": "Highly technical, precise, and evidence-based. Prefers logs, timestamps, and clear severity.",
+      "key_goal": "Improve reliability of admin and authentication services."
+    },
+    {
+      "name": "Mateo Alvarez",
+      "role": "Incident Response Coordinator",
+      "department": "Engineering Operations",
+      "reports_to": "Marcus Reed",
+      "timezone": "CST",
+      "communication_style": "Fast-moving, operational, and escalation-focused.",
+      "key_goal": "Coordinate cross-functional response during customer-impacting incidents."
+    },
+    {
+      "name": "Yuki Tayawa",
+      "role": "Localization Program Manager",
+      "department": "Globalization",
+      "reports_to": "Sophie Laurent",
+      "timezone": "JST",
+      "communication_style": "Structured, thoughtful, and detail-oriented.",
+      "key_goal": "Ensure product and support messaging works across APAC markets."
+    },
+    {
+      "name": "Jordan Kim",
+      "role": "Product Operations Manager",
+      "department": "Product Operations",
+      "reports_to": "Sophie Laurent",
+      "timezone": "PST",
+      "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+      "key_goal": "Improve launch readiness and cross-functional product communication."
+    },
+    {
+      "name": "Davis Wan",
+      "role": "Support Team Lead",
+      "department": "Customer Experience - Support Operations",
+      "reports_to": "Maya Chen",
+      "timezone": "KST",
+      "communication_style": "Calm, diplomatic, and escalation-aware.",
+      "key_goal": "Improve handoffs between frontline support and specialist teams."
+    },
+    {
+      "name": "Maya Chen",
+      "role": "Manager, Support Operations",
+      "department": "Customer Experience",
+      "reports_to": "Nadia Petrova",
+      "timezone": "PST",
+      "communication_style": "Practical, structured, and focused on team impact.",
+      "key_goal": "Improve support quality, routing, and operational consistency."
+    },
+    {
+      "name": "Sophie Laurent",
+      "role": "Senior Product Manager",
+      "department": "Product - Collaboration Platform",
+      "reports_to": "Daniel Okafor",
+      "timezone": "CET",
+      "communication_style": "Strategic, concise, and impact-focused.",
+      "key_goal": "Prioritize roadmap decisions using customer and support signals."
+    },
+    {
+      "name": "Marcus Reed",
+      "role": "Engineering Manager",
+      "department": "Engineering - Platform Reliability",
+      "reports_to": "Daniel Okafor",
+      "timezone": "CST",
+      "communication_style": "Direct, technical, and incident-oriented.",
+      "key_goal": "Reduce production issues affecting enterprise customers."
+    },
+    {
+      "name": "Ben Carter",
+      "role": "Director, Customer Success",
+      "department": "Customer Success",
+      "reports_to": "Amara Johnson",
+      "timezone": "EST",
+      "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+      "key_goal": "Reduce churn risk and improve strategic account retention."
+    },
+    {
+      "name": "Linh Tran",
+      "role": "Data Analyst",
+      "department": "Business Intelligence",
+      "reports_to": "Maya Chen",
+      "timezone": "PST",
+      "communication_style": "Analytical, dashboard-driven, and methodical.",
+      "key_goal": "Identify ticket trends, incident patterns, and automation opportunities."
+    },
+    {
+      "name": "Rohan Iyer",
+      "role": "Solutions Architect",
+      "department": "Enterprise Solutions",
+      "reports_to": "Ben Carter",
+      "timezone": "IST",
+      "communication_style": "Technical, consultative, and customer-context rich.",
+      "key_goal": "Translate enterprise customer needs into scalable technical solutions."
+    },
+    {
+      "name": "Nadia Petrova",
+      "role": "Head of Customer Experience Programs",
+      "department": "Customer Experience",
+      "reports_to": "Amara Johnson",
+      "timezone": "EET",
+      "communication_style": "Programmatic, research-informed, and cross-functional.",
+      "key_goal": "Improve customer support experience through process and tooling changes."
+    },
+    {
+      "name": "Daniel Okafor",
+      "role": "VP, Product & Engineering",
+      "department": "Product and Engineering",
+      "reports_to": "Amara Johnson",
+      "timezone": "GMT",
+      "communication_style": "Concise, strategic, and business-impact focused.",
+      "key_goal": "Align product roadmap and engineering execution with customer impact."
+    },
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience."
+    }
+  ]
+}

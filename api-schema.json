@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CompanyOSProfileView",
+  "description": "Payload shape returned by buildProfileView() — mirror this in your Custom GPT Action response.",
+  "type": "object",
+  "required": ["employee", "breadcrumb", "reportingLine", "peers", "aboutMe"],
+  "properties": {
+    "employee": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "department": { "type": "string" },
+        "teamLine": { "type": "string" },
+        "handle": { "type": "string" },
+        "email": { "type": "string" },
+        "timezone": { "type": "string" },
+        "localTime": { "type": "string" },
+        "location": { "type": "string" },
+        "tenure": { "type": "string" },
+        "started": { "type": "string" },
+        "avatarUrl": { "type": "string", "format": "uri" },
+        "managerName": { "type": ["string", "null"] }
+      }
+    },
+    "breadcrumb": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reportingLine": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "directReports": { "type": "integer" },
+          "reportBadge": { "type": ["string", "null"] },
+          "isCurrentUser": { "type": "boolean" }
+        }
+      }
+    },
+    "peers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" }
+        }
+      }
+    },
+    "aboutMe": {
+      "type": "object",
+      "properties": {
+        "communicationPreferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "emoji": { "type": "string" },
+              "text": { "type": "string" }
+            }
+          }
+        },
+        "resourceGroups": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "badges": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "workstreams": {
+      "type": "array"
+    },
+    "meta": {
+      "type": "object"
+    }
+  }
+}

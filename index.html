@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CompanyOS — People</title>
+    <meta http-equiv="refresh" content="0; url=people/" />
+    <link rel="canonical" href="people/" />
+    <script>
+      (function () {
+        var q = window.location.search;
+        if (q && (q.indexOf("person=") !== -1 || q.indexOf("name=") !== -1)) {
+          return;
+        }
+        window.location.replace("people/" + (window.location.search || ""));
+      })();
+    </script>
+  </head>
+  <body>
+    <p><a href="people/">Go to People directory</a></p>
+    <script type="module">
+      import { loadProfiles, findPerson } from "./js/profile-data.js";
+      import { profilePageUrl } from "./js/paths.js";
+
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("person") || params.get("name");
+      if (!name) return;
+
+      await loadProfiles();
+      if (findPerson(name)) {
+        window.location.replace(profilePageUrl(name));
+      }
+    </script>
+  </body>
+</html>
