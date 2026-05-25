@@ -60,8 +60,15 @@ export function getSlugFromPath() {
   return match ? match[1].toLowerCase() : null;
 }
 
+/** Relative path from current page (styles, etc.). */
 export function resolveAsset(path) {
   const base = getAssetBase();
   const clean = path.replace(/^\.\//, "");
   return `${base}${clean}`;
+}
+
+/** Absolute path from site root — reliable on GitHub Pages at any depth. */
+export function resolveRootAsset(path) {
+  const clean = path.replace(/^\.\//, "");
+  return `${getSiteRoot()}${clean}`;
 }

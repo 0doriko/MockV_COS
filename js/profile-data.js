@@ -3,7 +3,7 @@
  * Designed so a Custom GPT can later return the same shape via API.
  */
 
-import { getSlugFromPath, nameToSlug, resolveAsset } from "./paths.js";
+import { getSlugFromPath, nameToSlug, resolveRootAsset } from "./paths.js";
 
 const TIMEZONE_IANA = {
   EST: "America/New_York",
@@ -32,6 +32,7 @@ const TIMEZONE_LOCATION = {
 let profilesCache = null;
 let byName = null;
 let bySlug = null;
+let profilesSourceFile = "profiles.json";
 
 export { nameToSlug };
 
@@ -149,8 +150,20 @@ function badgesFor(person) {
 
 export async function loadProfiles() {
   if (profilesCache) return profilesCache;
-  const res = await fetch(resolveAsset("profiles.json"));
-  if (!res.ok) throw new Error("Failed to load profiles.json");
+  const candidates = ["profiles.json", "Profiles.json"];
+  let res = null;
+  for (const file of candidates) {
+    res = await fetch(resolveRootAsset(file));
+    if (res.ok) {
+      profilesSourceFile = file;
+      break;
+    }
+  }
+  if (!res?.ok) {
+    throw new Error(
+      `Failed to load profiles.json from ${resolveRootAsset("profiles.json")}`
+    );
+  }
   const data = await res.json();
   profilesCache = data.company_structure || [];
   byName = new Map(profilesCache.map((p) => [p.name, p]));
@@ -273,7 +286,7 @@ export function buildProfileView(personName) {
     },
     workstreams: [],
     meta: {
-      source: "profiles.json",
+      source: profilesSourceFile,
       generatedAt: new Date().toISOString(),
     },
   };
