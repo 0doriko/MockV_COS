@@ -1,0 +1,43 @@
+{
+  "slug": "maya-chen",
+  "employee": {
+    "name": "Maya Chen",
+    "role": "Manager, Support Operations",
+    "department": "Customer Experience",
+    "reports_to": "Nadia Petrova",
+    "timezone": "PST",
+    "communication_style": "Practical, structured, and focused on team impact.",
+    "key_goal": "Improve support quality, routing, and operational consistency."
+  },
+  "reporting_line": [
+    {
+      "name": "Maya Chen",
+      "role": "Manager, Support Operations",
+      "department": "Customer Experience",
+      "reports_to": "Nadia Petrova",
+      "timezone": "PST",
+      "communication_style": "Practical, structured, and focused on team impact.",
+      "key_goal": "Improve support quality, routing, and operational consistency."
+    },
+    {
+      "name": "Nadia Petrova",
+      "role": "Head of Customer Experience Programs",
+      "department": "Customer Experience",
+      "reports_to": "Amara Johnson",
+      "timezone": "EET",
+      "communication_style": "Programmatic, research-informed, and cross-functional.",
+      "key_goal": "Improve customer support experience through process and tooling changes."
+    },
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience."
+    }
+  ],
+  "peers": [],
+  "profile_url": "https://0doriko.github.io/MockV_COS/people/maya-chen/"
+}

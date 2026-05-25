@@ -1,0 +1,62 @@
+{
+  "slug": "jordan-kim",
+  "employee": {
+    "name": "Jordan Kim",
+    "role": "Product Operations Manager",
+    "department": "Product Operations",
+    "reports_to": "Sophie Laurent",
+    "timezone": "PST",
+    "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+    "key_goal": "Improve launch readiness and cross-functional product communication."
+  },
+  "reporting_line": [
+    {
+      "name": "Jordan Kim",
+      "role": "Product Operations Manager",
+      "department": "Product Operations",
+      "reports_to": "Sophie Laurent",
+      "timezone": "PST",
+      "communication_style": "Concise, systems-oriented, and roadmap-aware.",
+      "key_goal": "Improve launch readiness and cross-functional product communication."
+    },
+    {
+      "name": "Sophie Laurent",
+      "role": "Senior Product Manager",
+      "department": "Product - Collaboration Platform",
+      "reports_to": "Daniel Okafor",
+      "timezone": "CET",
+      "communication_style": "Strategic, concise, and impact-focused.",
+      "key_goal": "Prioritize roadmap decisions using customer and support signals."
+    },
+    {
+      "name": "Daniel Okafor",
+      "role": "VP, Product & Engineering",
+      "department": "Product and Engineering",
+      "reports_to": "Amara Johnson",
+      "timezone": "GMT",
+      "communication_style": "Concise, strategic, and business-impact focused.",
+      "key_goal": "Align product roadmap and engineering execution with customer impact."
+    },
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience."
+    }
+  ],
+  "peers": [
+    {
+      "name": "Yuki Tayawa",
+      "role": "Localization Program Manager",
+      "department": "Globalization",
+      "reports_to": "Sophie Laurent",
+      "timezone": "JST",
+      "communication_style": "Structured, thoughtful, and detail-oriented.",
+      "key_goal": "Ensure product and support messaging works across APAC markets."
+    }
+  ],
+  "profile_url": "https://0doriko.github.io/MockV_COS/people/jordan-kim/"
+}

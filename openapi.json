@@ -1,0 +1,118 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Mock CompanyOS Employee API",
+    "description": "Read-only access to mock employee org data for SyncMind / CompanyOS simulation. Use getCompanyStructure for the full roster, or getEmployeeProfile for one person including reporting line and peers.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://0doriko.github.io/MockV_COS"
+    }
+  ],
+  "paths": {
+    "/profiles.json": {
+      "get": {
+        "operationId": "getCompanyStructure",
+        "summary": "List all employees",
+        "description": "Returns the full company_structure array with name, role, department, reports_to, timezone, communication_style, and key_goal for each person.",
+        "responses": {
+          "200": {
+            "description": "All employees",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyStructureResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/{slug}.json": {
+      "get": {
+        "operationId": "getEmployeeProfile",
+        "summary": "Get one employee profile by URL slug",
+        "description": "Returns enriched profile for a single employee. Slug is lowercase hyphenated name, e.g. maya-chen, aisha-rahman, yuki-tayawa.",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "maya-chen"
+            },
+            "description": "Employee URL slug (not display name)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee profile",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeProfileResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown slug"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CompanyStructureResponse": {
+        "type": "object",
+        "required": ["company_structure"],
+        "properties": {
+          "company_structure": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Employee"
+            }
+          }
+        }
+      },
+      "Employee": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "department": { "type": "string" },
+          "reports_to": { "type": ["string", "null"] },
+          "timezone": { "type": "string" },
+          "communication_style": { "type": "string" },
+          "key_goal": { "type": "string" }
+        }
+      },
+      "EmployeeProfileResponse": {
+        "type": "object",
+        "properties": {
+          "slug": { "type": "string" },
+          "employee": { "$ref": "#/components/schemas/Employee" },
+          "reporting_line": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Employee" },
+            "description": "This person first, then their manager chain up to the CEO"
+          },
+          "peers": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Employee" },
+            "description": "People who share the same manager"
+          },
+          "profile_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Human-readable CompanyOS page on GitHub Pages"
+          }
+        }
+      }
+    }
+  }
+}

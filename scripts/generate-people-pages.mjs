@@ -12,6 +12,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const profilesPath = path.join(root, "profiles.json");
 const peopleDir = path.join(root, "people");
+const dataDir = path.join(root, "data");
+const siteBaseUrl = "https://0doriko.github.io/MockV_COS";
 
 function nameToSlug(name) {
   return name
@@ -239,6 +241,55 @@ function peopleIndexHtml(people) {
 `;
 }
 
+function findPerson(people, name) {
+  return people.find((p) => p.name === name) ?? null;
+}
+
+function buildReportingLine(person, people) {
+  const line = [];
+  let current = person;
+  const seen = new Set();
+  while (current) {
+    if (seen.has(current.name)) break;
+    seen.add(current.name);
+    line.push(current);
+    if (!current.reports_to) break;
+    current = findPerson(people, current.reports_to);
+  }
+  return line;
+}
+
+function buildPeers(person, people) {
+  if (!person.reports_to) {
+    return people.filter((p) => !p.reports_to && p.name !== person.name);
+  }
+  return people.filter(
+    (p) => p.reports_to === person.reports_to && p.name !== person.name
+  );
+}
+
+function generateDataFiles(people) {
+  if (fs.existsSync(dataDir)) {
+    fs.rmSync(dataDir, { recursive: true, force: true });
+  }
+  fs.mkdirSync(dataDir, { recursive: true });
+  for (const person of people) {
+    const slug = nameToSlug(person.name);
+    const payload = {
+      slug,
+      employee: person,
+      reporting_line: buildReportingLine(person, people),
+      peers: buildPeers(person, people),
+      profile_url: `${siteBaseUrl}/people/${slug}/`,
+    };
+    fs.writeFileSync(
+      path.join(dataDir, `${slug}.json`),
+      JSON.stringify(payload, null, 2)
+    );
+    console.log(`  data/${slug}.json`);
+  }
+}
+
 const data = JSON.parse(fs.readFileSync(profilesPath, "utf8"));
 const people = data.company_structure || [];
 
@@ -268,4 +319,5 @@ for (const person of people) {
 
 fs.writeFileSync(path.join(peopleDir, "index.html"), peopleIndexHtml(people));
 console.log("  people/index.html");
-console.log(`Generated ${people.length} profile pages.`);
+generateDataFiles(people);
+console.log(`Generated ${people.length} profile pages and API data files.`);

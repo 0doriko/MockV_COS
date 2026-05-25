@@ -1,0 +1,53 @@
+{
+  "slug": "rohan-iyer",
+  "employee": {
+    "name": "Rohan Iyer",
+    "role": "Solutions Architect",
+    "department": "Enterprise Solutions",
+    "reports_to": "Ben Carter",
+    "timezone": "IST",
+    "communication_style": "Technical, consultative, and customer-context rich.",
+    "key_goal": "Translate enterprise customer needs into scalable technical solutions."
+  },
+  "reporting_line": [
+    {
+      "name": "Rohan Iyer",
+      "role": "Solutions Architect",
+      "department": "Enterprise Solutions",
+      "reports_to": "Ben Carter",
+      "timezone": "IST",
+      "communication_style": "Technical, consultative, and customer-context rich.",
+      "key_goal": "Translate enterprise customer needs into scalable technical solutions."
+    },
+    {
+      "name": "Ben Carter",
+      "role": "Director, Customer Success",
+      "department": "Customer Success",
+      "reports_to": "Amara Johnson",
+      "timezone": "EST",
+      "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+      "key_goal": "Reduce churn risk and improve strategic account retention."
+    },
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience."
+    }
+  ],
+  "peers": [
+    {
+      "name": "Carlos Nguyen",
+      "role": "Customer Success Manager",
+      "department": "Customer Success",
+      "reports_to": "Ben Carter",
+      "timezone": "PST",
+      "communication_style": "Warm, relationship-focused, and customer-impact oriented.",
+      "key_goal": "Protect enterprise account health and reduce churn risk."
+    }
+  ],
+  "profile_url": "https://0doriko.github.io/MockV_COS/people/rohan-iyer/"
+}

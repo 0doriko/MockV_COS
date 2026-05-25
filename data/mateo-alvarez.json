@@ -1,0 +1,62 @@
+{
+  "slug": "mateo-alvarez",
+  "employee": {
+    "name": "Mateo Alvarez",
+    "role": "Incident Response Coordinator",
+    "department": "Engineering Operations",
+    "reports_to": "Marcus Reed",
+    "timezone": "CST",
+    "communication_style": "Fast-moving, operational, and escalation-focused.",
+    "key_goal": "Coordinate cross-functional response during customer-impacting incidents."
+  },
+  "reporting_line": [
+    {
+      "name": "Mateo Alvarez",
+      "role": "Incident Response Coordinator",
+      "department": "Engineering Operations",
+      "reports_to": "Marcus Reed",
+      "timezone": "CST",
+      "communication_style": "Fast-moving, operational, and escalation-focused.",
+      "key_goal": "Coordinate cross-functional response during customer-impacting incidents."
+    },
+    {
+      "name": "Marcus Reed",
+      "role": "Engineering Manager",
+      "department": "Engineering - Platform Reliability",
+      "reports_to": "Daniel Okafor",
+      "timezone": "CST",
+      "communication_style": "Direct, technical, and incident-oriented.",
+      "key_goal": "Reduce production issues affecting enterprise customers."
+    },
+    {
+      "name": "Daniel Okafor",
+      "role": "VP, Product & Engineering",
+      "department": "Product and Engineering",
+      "reports_to": "Amara Johnson",
+      "timezone": "GMT",
+      "communication_style": "Concise, strategic, and business-impact focused.",
+      "key_goal": "Align product roadmap and engineering execution with customer impact."
+    },
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience."
+    }
+  ],
+  "peers": [
+    {
+      "name": "Priya Sharma",
+      "role": "Backend Engineer",
+      "department": "Engineering - Platform Reliability",
+      "reports_to": "Marcus Reed",
+      "timezone": "IST",
+      "communication_style": "Highly technical, precise, and evidence-based. Prefers logs, timestamps, and clear severity.",
+      "key_goal": "Improve reliability of admin and authentication services."
+    }
+  ],
+  "profile_url": "https://0doriko.github.io/MockV_COS/people/mateo-alvarez/"
+}

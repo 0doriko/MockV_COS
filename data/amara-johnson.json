@@ -1,0 +1,25 @@
+{
+  "slug": "amara-johnson",
+  "employee": {
+    "name": "Amara Johnson",
+    "role": "Chief Customer Officer",
+    "department": "Executive Leadership",
+    "reports_to": null,
+    "timezone": "EST",
+    "communication_style": "Executive-level, outcome-focused, and concise.",
+    "key_goal": "Improve customer trust, retention, and enterprise experience."
+  },
+  "reporting_line": [
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience."
+    }
+  ],
+  "peers": [],
+  "profile_url": "https://0doriko.github.io/MockV_COS/people/amara-johnson/"
+}

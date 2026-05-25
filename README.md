@@ -63,7 +63,15 @@ python3 -m http.server 8080
 
 ## Custom GPT integration
 
-`buildProfileView(name)` in `js/profile-data.js` returns JSON documented in `api-schema.json`. When your SyncMind GPT is ready, point the app at that API instead of `Profiles.json`.
+**Do not** import the `/people/` HTML page as an Action schema — use the OpenAPI file:
+
+```
+https://0doriko.github.io/MockV_COS/openapi.json
+```
+
+See [docs/CUSTOM_GPT_SETUP.md](docs/CUSTOM_GPT_SETUP.md) for step-by-step setup.
+
+After `npm run build:pages`, commit `openapi.json`, `data/*.json`, and `profiles.json`.
 
 ## Files
 

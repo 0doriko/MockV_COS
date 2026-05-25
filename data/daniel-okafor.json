@@ -1,0 +1,53 @@
+{
+  "slug": "daniel-okafor",
+  "employee": {
+    "name": "Daniel Okafor",
+    "role": "VP, Product & Engineering",
+    "department": "Product and Engineering",
+    "reports_to": "Amara Johnson",
+    "timezone": "GMT",
+    "communication_style": "Concise, strategic, and business-impact focused.",
+    "key_goal": "Align product roadmap and engineering execution with customer impact."
+  },
+  "reporting_line": [
+    {
+      "name": "Daniel Okafor",
+      "role": "VP, Product & Engineering",
+      "department": "Product and Engineering",
+      "reports_to": "Amara Johnson",
+      "timezone": "GMT",
+      "communication_style": "Concise, strategic, and business-impact focused.",
+      "key_goal": "Align product roadmap and engineering execution with customer impact."
+    },
+    {
+      "name": "Amara Johnson",
+      "role": "Chief Customer Officer",
+      "department": "Executive Leadership",
+      "reports_to": null,
+      "timezone": "EST",
+      "communication_style": "Executive-level, outcome-focused, and concise.",
+      "key_goal": "Improve customer trust, retention, and enterprise experience."
+    }
+  ],
+  "peers": [
+    {
+      "name": "Ben Carter",
+      "role": "Director, Customer Success",
+      "department": "Customer Success",
+      "reports_to": "Amara Johnson",
+      "timezone": "EST",
+      "communication_style": "Executive-friendly, customer-outcome focused, and concise.",
+      "key_goal": "Reduce churn risk and improve strategic account retention."
+    },
+    {
+      "name": "Nadia Petrova",
+      "role": "Head of Customer Experience Programs",
+      "department": "Customer Experience",
+      "reports_to": "Amara Johnson",
+      "timezone": "EET",
+      "communication_style": "Programmatic, research-informed, and cross-functional.",
+      "key_goal": "Improve customer support experience through process and tooling changes."
+    }
+  ],
+  "profile_url": "https://0doriko.github.io/MockV_COS/people/daniel-okafor/"
+}
